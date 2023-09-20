@@ -29,42 +29,23 @@ const TimeStamp = styled.h6`
 `;
 
 function Message({ sender, message, timeStamp, onDelete }) {
-    const isSenderEmpty = ((sender.trim() === '')||(sender.trim() === 'Eu')||(sender.trim() === 'eu'));
-    const messageStyle = {
-        padding: '5px',
-        borderRadius: '5px',
-        margin: '5px',
-        cursor: 'pointer',
-        textAlign: isSenderEmpty ? 'right' : 'left',
-        class: isSenderEmpty ? 'right-message' : 'left-message',
-    };
+    const isSenderEmpty = sender.trim().toLowerCase() === '' || sender.trim().toLowerCase() === 'eu';
 
-    if ((sender.trim() === "")||(sender.trim() === "Eu")||(sender.trim() === "eu")){
-        return (
-            <div
-                onDoubleClick={onDelete}
-                style={messageStyle}
-                className={messageStyle.class}
-            >
-                <strong>Você</strong>
+    return (
+        <MessageListContainer>
+            <MessageContainer isSenderEmpty={isSenderEmpty} onDoubleClick={onDelete}>
+                {!isSenderEmpty ? (
+                    <SenderName>{sender}</SenderName>
+                ) : (
+                    <SenderName>
+                        <strong>Você</strong>
+                    </SenderName>
+                )}
                 <p>{message}</p>
-                <h6>{timeStamp}</h6>
-            </div>
-        );
-    }else{
-        return (
-            <div
-                onDoubleClick={onDelete}
-                style={messageStyle}
-                className={messageStyle.class}
-            >
-                <strong>{sender}</strong>
-                <p>{message}</p>
-                <h6>{timeStamp}</h6>
-            </div>
-        );
-    }
-
+                <TimeStamp>{timeStamp}</TimeStamp>
+            </MessageContainer>
+        </MessageListContainer>
+    );
 }
 
 export default Message;
