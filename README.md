@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+### UaiZAP - README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto tem por objetivo apresentar um MVP (Minimum Viable Product), ou seja, um mínimo produto viável para uma possível aplicação de conversa. Trata-se de uma versão simplificada de um recurso de chat para grupos, desenvolvido utilizando tecnologias WEB modernas:
 
-## Available Scripts
+### Tecnologias Utilizadas:
+React: O projeto é construído com o framework JavaScript React. React é amplamente usado para criar interfaces de usuário interativas e reativas.
 
-In the project directory, you can run:
+Styled Components: A biblioteca Styled Components é usada para estilizar os componentes React de forma mais eficiente e manutenível. Ela permite que estilos sejam definidos diretamente nos componentes, facilitando a criação de interfaces consistentes.
 
-### `npm start`
+HTML e CSS: HTML é a linguagem de marcação utilizada para estruturar o conteúdo da aplicação. CSS é usado para estilizar os elementos HTML, permitindo a organização e aprimoração estética dos elementos do projeto de forma harmônica.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Principais Recursos:
+Chat em Tempo Real: A aplicação permite que os usuários enviem mensagens em tempo real, criando uma experiência de chat interativa.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Interface de Usuário Intuitiva: A interface de usuário é projetada de forma simples e intuitiva, com campos de entrada de texto para o nome do remetente e mensagens.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Exclusão de Mensagens: Os usuários têm a capacidade de excluir mensagens enviadas anteriormente, proporcionando controle sobre o histórico de chat.
