@@ -1,137 +1,56 @@
-// import React from 'react';
-// import styled from 'styled-components';
-
-// const MessageListContainer = styled.div`
-//     max-height: 400px; /* Altura máxima para habilitar a rolagem */
-//     overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
-// `;
-
-// const MessageContainer = styled.div`
-//     background-color: ${(props) => (props.isSenderEmpty ? '#007bff' : '#f0f0f0')};
-//     color: ${(props) => (props.isSenderEmpty ? '#fff' : '#000')};
-//     padding: 10px;
-//     border-radius: 10px;
-//     margin: 5px;
-//     max-width: 70%;
-//     word-wrap: break-word;
-//     align-self: ${(props) => (props.isSenderEmpty ? 'flex-end' : 'flex-start')};
-// `;
-
-// const SenderName = styled.strong`
-//     display: block;
-//     margin-bottom: 5px;
-// `;
-
-// const TimeStamp = styled.h6`
-//     font-size: 12px;
-//     text-align: right;
-//     color: #777;
-// `;
-
-// function Message({ sender, message, timeStamp, onDelete }) {
-//     const isSenderEmpty = ((sender.trim() === '') || (sender.trim() === 'Eu') || (sender.trim() === 'eu'));
-//     const messageStyle = {
-//         padding: '5px',
-//         borderRadius: '5px',
-//         margin: '5px',
-//         cursor: 'pointer',
-//         textAlign: isSenderEmpty ? 'right' : 'left',
-//         class: isSenderEmpty ? 'right-message' : 'left-message',
-//     };
-
-//     if ((sender.trim() === "") || (sender.trim() === "Eu") || (sender.trim() === "eu")) {
-//         return (
-//             <MessageListContainer>
-//                 <MessageContainer isSenderEmpty={isSenderEmpty} onDoubleClick={onDelete}>
-//                     {!isSenderEmpty && <SenderName>Você</SenderName>}
-//                     <p>{message}</p>
-//                     <TimeStamp>{timeStamp}</TimeStamp>
-//                 </MessageContainer>
-//             </MessageListContainer>
-//         );
-//     } else {
-//         return (
-//             <MessageListContainer>
-//                 <MessageContainer isSenderEmpty={isSenderEmpty} onDoubleClick={onDelete}>
-//                     {!isSenderEmpty && <SenderName>{sender}</SenderName>}
-//                     <p>{message}</p>
-//                     <TimeStamp>{timeStamp}</TimeStamp>
-//                 </MessageContainer>
-//             </MessageListContainer>
-//         );
-//     };
-
-// };
-
-// export default Message;
-
 import React from 'react';
 import styled from 'styled-components';
 
-// const MessageListContainer = styled.div`
-//     max-height: 400px; /* Altura máxima para habilitar a rolagem */
-//     overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
-// `;
+const MessageListContainer = styled.div`
+    max-height: 400px; 
+    overflow-y: auto; 
+`;
+const P = styled.p`
+    margin:0;
+`
+const MessageContainer = styled.div`
+    background-color: ${(props) => (props.isSenderEmpty ? '#ff0010' : '#f0f0f0')};
+    color: ${(props) => (props.isSenderEmpty ? '#fff' : '#000')};
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 30%;
+    height:10%;
+    word-wrap: break-word;
+    margin: ${(props) => (props.isSenderEmpty ? '0 0 5px 70%' : '0 0 5px 0')};
+    border: 2px solid #000; 
 
-// const MessageContainer = styled.div`
-//     background-color: ${(props) => (props.isSenderEmpty ? '#007bff' : '#f0f0f0')};
-//     color: ${(props) => (props.isSenderEmpty ? '#fff' : '#000')};
-//     padding: 10px;
-//     border-radius: 10px;
-//     margin: 5px;
-//     max-width: 70%;
-//     word-wrap: break-word;
-//     align-self: ${(props) => (props.isSenderEmpty ? 'flex-end' : 'flex-start')};
-// `;
+`;
 
-// const SenderName = styled.strong`
-//     display: block;
-//     margin-bottom: 5px;
-// `;
+const SenderName = styled.strong`
+    display: block;
+    
+`;
 
-// const TimeStamp = styled.h6`
-//     font-size: 12px;
-//     text-align: right;
-//     color: #777;
-// `;
+const TimeStamp = styled.h6`
+    font-size: 12px;
+    text-align: left;
+    color: #777;
+    margin:0;
+`;
 
 function Message({ sender, message, timeStamp, onDelete }) {
-    const isSenderEmpty = ((sender.trim() === '')||(sender.trim() === 'Eu')||(sender.trim() === 'eu'));
-    const messageStyle = {
-        padding: '5px',
-        borderRadius: '5px',
-        margin: '5px',
-        cursor: 'pointer',
-        textAlign: isSenderEmpty ? 'right' : 'left',
-        class: isSenderEmpty ? 'right-message' : 'left-message',
-    };
+    const isSenderEmpty = sender.trim().toLowerCase() === '' || sender.trim().toLowerCase() === 'eu';
 
-    if ((sender.trim() === "")||(sender.trim() === "Eu")||(sender.trim() === "eu")){
-        return (
-            <div
-                onDoubleClick={onDelete}
-                style={messageStyle}
-                className={messageStyle.class}
-            >
-                <strong>Você</strong>
-                <p>{message}</p>
-                <h6>{timeStamp}</h6>
-            </div>
-        );
-    }else{
-        return (
-            <div
-                onDoubleClick={onDelete}
-                style={messageStyle}
-                className={messageStyle.class}
-            >
-                <strong>{sender}</strong>
-                <p>{message}</p>
-                <h6>{timeStamp}</h6>
-            </div>
-        );
-    }
-
+    return (
+        <MessageListContainer>
+            <MessageContainer isSenderEmpty={isSenderEmpty} onDoubleClick={onDelete}>
+                {!isSenderEmpty ? (
+                    <SenderName>{sender}</SenderName>
+                ) : (
+                    <SenderName>
+                        <strong>Você</strong>
+                    </SenderName>
+                )}
+                <P>{message}</P>
+                <TimeStamp>{timeStamp}</TimeStamp>
+            </MessageContainer>
+        </MessageListContainer>
+    );
 }
 
 export default Message;
